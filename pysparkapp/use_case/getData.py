@@ -17,7 +17,7 @@ class GetData:
         print("Connection to Mongo ready \n Collections loaded")
 
     def invoke(self):
-        if DataInitService.is_db_empty():
+        if DataInitService.is_db_empty(self.last_update_collection):
             DataInitService.get_all_data(self.collection_crime, self.last_update_collection,
                                          self.first_error_date_collection)
         threading.Thread(target=self.get_actual_data_job()).start()

@@ -76,7 +76,7 @@ class DataInitService:
                 date_last_update = updated_on
 
     @staticmethod
-    def is_db_empty(self):
-        cursor = self.last_update_collection.find()
+    def is_db_empty(last_update_collection):
+        cursor = last_update_collection.find()
         results = list(cursor)
         return len(results) == 0
